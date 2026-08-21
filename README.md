@@ -20,12 +20,15 @@ Microsoft Power Platform · Copilot Studio · Dataverse · PCF
 I build agents and applications on the Microsoft Power Platform, and the automation and governance
 that keeps them running once they are real.
 
-This profile is a **working portfolio**. Every repository is a generic, reusable pattern extracted
-from real delivery, anonymised and documented so the community can use it.
+This profile is a **pattern library**. Every repository is a self-contained sample solution that
+demonstrates a reusable approach to a common problem, published so others can adapt it.
 
 > Each repo opens with the problem it solves, and states plainly what has been **verified** against
 > a live environment versus what has been **assumed**. Documented negative findings are included,
 > because they save the next person days.
+
+> **These are samples, not products.** Provided as is, not production ready, and not affiliated with
+> or endorsed by Microsoft. Review, test and harden before any real use.
 
 ---
 
@@ -172,7 +175,7 @@ tenant. Several findings are marked unverified precisely so someone can close th
 
 | Principle | In practice |
 |---|---|
-| **Anonymised, never borrowed** | Generic patterns only. No customer IP, data, branding or configuration. |
+| **Self-contained samples** | Each repo stands alone as a demonstrable pattern. No customer IP, data, branding or configuration. |
 | **Explicit about certainty** | Repos separate what was verified live from what was assumed, and publish negative findings. |
 | **Built for handover** | Configuration over customisation. Environment variables, not hardcoded IDs. Solutions ship disabled. |
 | **Documented for the reader who is stuck** | Known gotchas, licensing traps and failure modes, not just the happy path. |
@@ -199,5 +202,8 @@ tenant. Several findings are marked unverified precisely so someone can close th
 ---
 
 *Every repository states what it solves, what is verified, and what is not.*
+
+**Sample code.** Provided as is, without warranty. Not production ready. Not an official Microsoft
+product, and not affiliated with or endorsed by Microsoft.
 
 </div>
