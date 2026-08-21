@@ -1,14 +1,31 @@
+<div align="center">
+
 # Nathan Backers
 
-**Senior Solution Engineer - Apps & Agents**
+**Senior Solution Engineer · Apps & Agents**
 
-I build on the Microsoft Power Platform: Copilot Studio agents, Power Apps code apps, PCF
-components, Dataverse extensibility, and the automation and governance that holds it together.
+Microsoft Power Platform · Copilot Studio · Dataverse · PCF
 
-This profile is a working portfolio. Every repository here is a **generic, reusable pattern**
-extracted from real delivery - anonymised, documented, and published so the community can use it.
-Each one starts with the problem it solves, and is explicit about what has been verified versus
-what has been assumed.
+[![Copilot Studio](https://img.shields.io/badge/Copilot_Studio-0F6CBD?style=for-the-badge&logo=microsoft&logoColor=white)](https://github.com/nbackers)
+[![Power Platform](https://img.shields.io/badge/Power_Platform-742774?style=for-the-badge&logo=microsoftpowerplatform&logoColor=white)](https://github.com/nbackers)
+[![Dataverse](https://img.shields.io/badge/Dataverse-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://github.com/nbackers)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/nbackers)
+
+</div>
+
+---
+
+## About
+
+I build agents and applications on the Microsoft Power Platform, and the automation and governance
+that keeps them running once they are real.
+
+This profile is a **working portfolio**. Every repository is a generic, reusable pattern extracted
+from real delivery, anonymised and documented so the community can use it.
+
+> Each repo opens with the problem it solves, and states plainly what has been **verified** against
+> a live environment versus what has been **assumed**. Documented negative findings are included,
+> because they save the next person days.
 
 ---
 
@@ -16,117 +33,171 @@ what has been assumed.
 
 ### Agents & AI
 
-**[copilot-studio-agent-builder-skill](https://github.com/nbackers/copilot-studio-agent-builder-skill)**
-*Skills that build, review and package agents for the new Copilot Studio experience.*
+<table>
+<tr>
+<td width="50%" valign="top">
 
-> **The problem:** the new Copilot Studio experience has limited file-based authoring support, and
-> the Copilot Skills extension doesn't cover it. So the patterns that decide whether an agent routes
-> correctly aren't written down anywhere, and every team rediscovers them the same way - usually by
-> splitting into four agents that then route badly.
+#### [Agent Builder Skill](https://github.com/nbackers/copilot-studio-agent-builder-skill)
 
-**Solves:** three skills covering design, routing diagnosis and packaging - with the one-agent versus
-orchestrator test, routing driven by `description` rather than name, and a validator catching the
-BOM, name-case and archive-root problems that break a skill upload with unhelpful errors.
+![Skills](https://img.shields.io/badge/3_skills-0F6CBD?style=flat-square)
+![Validator](https://img.shields.io/badge/validator-tested-success?style=flat-square)
 
----
+**Problem:** the new Copilot Studio experience has limited file-based authoring, so the patterns
+that decide whether an agent routes correctly are written down nowhere. Every team rediscovers
+them the hard way.
 
-**[copilot-retail-multiagent](https://github.com/nbackers/copilot-retail-multiagent)**
-*Multi-agent orchestration reference implementation for retail operations.*
+**Solves:** skills for design, routing diagnosis and packaging, plus a validator catching the BOM,
+name-case and archive-root faults that break an upload with unhelpful errors.
 
-> **The problem:** most "multi-agent" demos are a single agent wearing several hats. Teams can't tell
-> when orchestration genuinely earns its complexity, so they either over-engineer four agents where
-> one would do, or build one overloaded agent that routes badly.
+</td>
+<td width="50%" valign="top">
 
-**Solves:** an orchestrator with four domain agents and six deliberately *cross-cutting* skills that
-each span two or three domains - demonstrating the case where orchestration is actually justified,
-alongside the counter-example and the decision framework separating them. One script rebrands the
-whole set to any schema.
+#### [Retail Multi-Agent](https://github.com/nbackers/copilot-retail-multiagent)
 
----
+![Agents](https://img.shields.io/badge/orchestrator_+_4_agents-0F6CBD?style=flat-square)
+![Skills](https://img.shields.io/badge/6_cross--cutting_skills-742774?style=flat-square)
 
-**[dataverse-document-intelligence](https://github.com/nbackers/dataverse-document-intelligence)**
-*Configurable prompt-driven document processing into Dataverse.*
+**Problem:** most multi-agent demos are one agent wearing several hats. Teams cannot tell when
+orchestration earns its complexity, so they over-engineer four agents that route badly.
 
-> **The problem:** document-processing builds are rebuilt from scratch every time because the
-> extraction schema is hardcoded. Scanned documents silently return nothing. And AI writes straight
-> to the system of record with no human control point, which is exactly what governance teams reject.
+**Solves:** an orchestrator with four domain agents and six deliberately cross-cutting skills,
+plus the decision framework for when *not* to split.
 
-**Solves:** a configuration UI where users define their own capture fields; automatic detection of
-scanned documents with fallback to a vision prompt; confidence and explicit `missingInformation`
-surfaced for human validation; and nothing written to Dataverse until a person confirms. Documents
-four undocumented AI Builder behaviours, each of which costs a day to find.
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
----
+#### [Document Intelligence](https://github.com/nbackers/dataverse-document-intelligence)
+
+![AI Builder](https://img.shields.io/badge/AI_Builder-742774?style=flat-square)
+![Findings](https://img.shields.io/badge/4_undocumented_findings-important?style=flat-square)
+
+**Problem:** extraction is rebuilt every project because the schema is hardcoded, scanned documents
+silently return nothing, and AI writes to the system of record unchecked.
+
+**Solves:** user-defined capture fields, automatic scan detection with a vision fallback, and a
+human validation gate before anything persists.
+
+</td>
+<td width="50%" valign="top">
+
+#### [Frontline Safety Copilot](https://github.com/nbackers/frontline-safety-copilot)
+
+![Vision](https://img.shields.io/badge/multimodal-0F6CBD?style=flat-square)
+![Safety](https://img.shields.io/badge/safety_critical-critical?style=flat-square)
+
+**Problem:** safety tooling is retrospective. It records incidents well and prevents them poorly.
+The procedure that matters sits in a library nobody opens at the job site.
+
+**Solves:** a JSA sized for the two minutes a worker has, hazard identification from a photo, and
+controls matched to the hazard rather than the whole library.
+
+</td>
+</tr>
+</table>
 
 ### Apps & Components
 
-**[frontline-safety-copilot](https://github.com/nbackers/frontline-safety-copilot)**
-*Proactive field safety, JSA and hazard identification from a photo.*
+<table>
+<tr>
+<td width="50%" valign="top">
 
-> **The problem:** frontline safety tooling is retrospective - it records incidents well and prevents
-> them poorly. Job safety analysis is a form completed after the fact from memory, and the safe work
-> method statement for the task sits in a document library nobody opens on a phone at the job site.
+#### [PCF Agent Harness](https://github.com/nbackers/pcf-agent-harness-frontline)
 
-**Solves:** a job safety analysis sized for the two minutes a worker actually has, hazard
-identification from a photo of the work area, controls matched by hazard type and task rather than
-the whole procedure library, and a workflow that branches on what was found. Unmatched hazards are
-escalated as findings rather than quietly dropped.
+![Build](https://img.shields.io/badge/build-passing-success?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-11_passing-success?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 
----
+**Problem:** "how do I put my agent inside my app?" has no good published answer. Users get bounced
+to a separate surface, and the SSO path still prompts them to sign in again.
 
-**[pcf-agent-harness-frontline](https://github.com/nbackers/pcf-agent-harness-frontline)**
-*Embedding a Copilot Studio agent inside a Power App.*
+**Solves:** a PCF control embedding an agent in a Power App, with the undocumented OAuth card
+interception that makes SSO silent, plus an offline demo harness.
 
-> **The problem:** "how do I put my agent inside my app?" has no good published answer. Users get
-> bounced out to a separate chat surface, which breaks the task they were doing and strips the agent
-> of everything it could have known. Auth is the hard part and most samples skip it - so users
-> already signed in are asked to sign in again, which is what SSO was meant to prevent.
+</td>
+<td width="50%" valign="top">
 
-**Solves:** a PCF component embedding an agent directly in a Power App, with both auth paths and the
-undocumented OAuth card interception that makes SSO silent, screen context passed on conversation
-start, and an offline scenario harness for demos that don't depend on the network.
+#### [Planner Premium Automation](https://github.com/nbackers/planner-premium-automation)
 
----
+![Solution](https://img.shields.io/badge/managed_solution-742774?style=flat-square)
+![Mock schema](https://img.shields.io/badge/mock_schema-included-success?style=flat-square)
 
-### Automation & Governance
+**Problem:** the Planner connector does not work with Planner Premium. Premium plans live in
+Dataverse as `msdyn_project*`, so the Planner actions return nothing and people conclude it cannot
+be automated.
 
-**[planner-premium-automation](https://github.com/nbackers/planner-premium-automation)**
-*Automating Planner Premium - via Dataverse, not the Planner connector.*
+**Solves:** the full Planner-to-Dataverse mapping from live metadata, and a working solution with
+a dedupe guard, testable without a Premium licence.
 
-> **The problem:** the Planner connector doesn't work with Planner Premium. Premium plans are Project
-> for the web plans living in Dataverse as `msdyn_project*` tables, so the Planner actions return
-> nothing and people conclude Planner Premium can't be automated at all.
+</td>
+</tr>
+</table>
 
-**Solves:** documents the full Planner-to-Dataverse mapping from live metadata, and ships a working
-managed solution - configured by environment variables, with a dedupe guard so repeated triggers
-never duplicate cards, plus mock-schema scripts so it can be tested without a Premium licence.
+### Governance & Operations
 
----
+<table>
+<tr>
+<td width="50%" valign="top">
 
-**[copilot-credit-observability](https://github.com/nbackers/copilot-credit-observability)**
-*Admin visibility over Copilot Studio credit consumption.*
+#### [Copilot Credit Observability](https://github.com/nbackers/copilot-credit-observability)
 
-> **The problem:** organisations are deploying agents with no way to answer "what will this cost at
-> scale, and which agent is driving it?" Consumption data is spread across the admin centre and
-> undocumented APIs, so cost surfaces only when capacity runs out - which makes agent rollout a
-> governance risk rather than a managed programme.
+![Verified](https://img.shields.io/badge/verified-live_tenant-success?style=flat-square)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 
-**Solves:** collects consumption from the licensing endpoints the admin centre itself uses - verified
-against a live tenant - and reports credits by agent, environment and message type, with burn rate,
-days-to-exhaustion forecasting and threshold alerting. Documents the correct token audience, which is
-the detail most guidance gets wrong.
+**Problem:** organisations deploy agents with no way to answer "what will this cost at scale, and
+which agent is driving it?" Cost becomes visible when capacity runs out.
+
+**Solves:** collects consumption from the licensing endpoints the admin centre itself uses,
+verified against a live tenant, with burn rate and days-to-exhaustion forecasting.
+
+</td>
+<td width="50%" valign="top">
+
+#### More on the way
+
+Patterns are extracted and published as they generalise cleanly.
+
+Contributions and corrections are welcome, particularly **verification results** from your own
+tenant. Several findings are marked unverified precisely so someone can close them out.
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## How I work
-- **Anonymised, never borrowed.** Everything here is a generic pattern. No customer IP, data, branding or configuration.
-- **Explicit about certainty.** Repos separate what was verified against a real environment from what was assumed. Documented negative findings are included, because they save the next person days.
-- **Built for handover.** Configuration over customisation - environment variables, not hardcoded IDs. Solutions ship disabled so nothing runs before it's been checked.
-- **Documented for the reader who's stuck.** Known gotchas, licensing traps and failure modes, not just the happy path.
+
+| Principle | In practice |
+|---|---|
+| **Anonymised, never borrowed** | Generic patterns only. No customer IP, data, branding or configuration. |
+| **Explicit about certainty** | Repos separate what was verified live from what was assumed, and publish negative findings. |
+| **Built for handover** | Configuration over customisation. Environment variables, not hardcoded IDs. Solutions ship disabled. |
+| **Documented for the reader who is stuck** | Known gotchas, licensing traps and failure modes, not just the happy path. |
 
 ---
 
-## Areas
+## Stack
 
-`Copilot Studio` · `AI agents & orchestration` · `MCP` · `Power Apps code apps` · `PCF` ·
-`Dataverse` · `Power Automate` · `Power Pages` · `ALM & governance` · `React / TypeScript` · `C#` · `PowerShell`
+![Copilot Studio](https://img.shields.io/badge/Copilot_Studio-0F6CBD?style=flat-square&logo=microsoft&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square)
+![Dataverse](https://img.shields.io/badge/Dataverse-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![Power Apps](https://img.shields.io/badge/Power_Apps-742774?style=flat-square&logo=microsoftpowerapps&logoColor=white)
+![Power Automate](https://img.shields.io/badge/Power_Automate-0066FF?style=flat-square&logo=microsoftpowerautomate&logoColor=white)
+![Power Pages](https://img.shields.io/badge/Power_Pages-742774?style=flat-square)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![PCF](https://img.shields.io/badge/PCF-0F6CBD?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
+
+<div align="center">
+
+---
+
+*Every repository states what it solves, what is verified, and what is not.*
+
+</div>
